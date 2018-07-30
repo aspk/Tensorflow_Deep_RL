@@ -1,13 +1,13 @@
 Tensorflow_Deep_RL
 **********
 
-An implementation of multiple algorithms used for training agents on gym environment.
+An implementation of multiple algorithms used for training agents on gym environment. Algorithms are directly implemented from research papers and references are cited.
 
 
 Parameter Space Noise for Exploration 
 =====================================
 
-Parameter noise ius used for exploration in this method. Standard deviation of noise is constant.
+This work implements the idea from Parameter Space Noise for Exploration from OpenAi and in their work this approach trained faster than action space exploration for certain environments especially environments with sparse rewards. Standard deviation of noise is constant in my work but noise can be annealed as training progresses for an optimum solution. Agents have to be trained multiple times as there is a high possibility trainng getting stuck in local optima. 
  
 https://arxiv.org/abs/1706.01905
 
@@ -62,7 +62,7 @@ Graph
 Noisy parameters
 ----------------
 
-Noise is added to the parameters while collection rollouts for exploration and deterministic actions are used instead of probabilistic as in the case of actor critic methods.
+Noise is added to the parameters while collecting rollouts for exploration and deterministic actions are used instead of probabilistic in each episode.
 
 .. code:: python
 
